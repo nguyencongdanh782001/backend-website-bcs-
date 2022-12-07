@@ -1,0 +1,388 @@
+---------------------------------------------------------------------------API AUTH----------------------------------------------------------------------------
+# REGISTER
+###
+POST http://localhost:5000/api/auth/register 
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"123456",
+    "confirmpassword":"123456",
+    "isAdmin": true
+}
+
+# LOGIN
+###
+POST http://localhost:5000/api/auth/login 
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"123456"
+}
+
+
+# ---------------------------------------------------------------------------API USER---------------------------------------------------------------------------
+# # GET CURRENT USER
+# ###
+# GET  http://localhost:5000/api/user/current-user
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# # FIND USER
+# ###
+# GET  http://localhost:5000/api/user/find-user/627bc0a00cae56689089bc25
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# # GET ALL USER
+# ###
+# GET  http://localhost:5000/api/user/all-user?new=true
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# # UPDATE USER INFO
+# ###
+# PUT http://localhost:5000/api/user/update-user/627bc0a00cae56689089bc25
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "username":"admin"
+# }
+
+# # CHECK PASSWORD USER
+# ###
+# POST http://localhost:5000/api/user/check-user-password
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "oldPassword":"123456"
+# }
+
+# # DELETE USER
+# ###
+# DELETE  http://localhost:5000/api/user/delete-user/627bc0a00cae56689089bc25
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# --------------------------------------------------------------------------API GENRE--------------------------------------------------------------------------
+# # GET ALL GENRE
+# ###
+# GET  http://localhost:5000/api/genre/all-genre
+
+# # CREATE GENRE
+# ###
+# POST  http://localhost:5000/api/genre/create-genre
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTM3NDk4MjUsImV4cCI6MTY1NDAwOTAyNX0.wXgAM7rVCAov63pxQd1Vso2nZAbyygXuToFD9JcoPas
+
+# {
+#     "name": "phụ kiện",
+#     "slug": "phu-kien"
+# }
+
+# # UPDATE GENRE
+# ###
+# PUT  http://localhost:5000/api/genre/update-genre/627bc3be4f55e3d354d72591
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "name": "Disposable Pod",
+#     "slug": "pod-mot-lan"
+# }
+
+# # DELETE GENRE
+# ###
+# DELETE  http://localhost:5000/api/genre/delete-genre/62871118d75c2cf52a76e6a2
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTM3NDk4MjUsImV4cCI6MTY1NDAwOTAyNX0.wXgAM7rVCAov63pxQd1Vso2nZAbyygXuToFD9JcoPas
+
+
+# -------------------------------------------------------------------------API CATEGORY------------------------------------------------------------------------
+# # GET ALL CATEGORY
+# ###
+# GET  http://localhost:5000/api/category/all-category
+
+# # GET DETAIL CATEGORY
+# ###
+# GET  http://localhost:5000/api/category/detail-category/627e0acd47324d4f91dadf5a
+
+# # CREATE CATEGORY
+# ###
+# POST  http://localhost:5000/api/category/create-category
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "genre":"627bc3be4f55e3d354d72591",
+#     "name": "box tank",
+#     "desc": "",
+#     "image": {
+#         "public_id":"123456788",
+#         "url": "1245678"
+#     },
+#     "slug": "box-tank"
+# }
+
+# # UPDATE CATEGORY
+# ###
+# PUT  http://localhost:5000/api/category/update-category/627bc3be4f55e3d354d72591
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "genre":"627bc3be4f55e3d354d72591",
+#     "name": "box tank",
+#     "desc": "",
+#     "image": {
+#         "public_id":"1234",
+#         "url": "124"
+#     },
+#     "slug": "box-tank"
+# }
+
+# # DELETE CATEGORY
+# ###
+# DELETE  http://localhost:5000/api/category/delete-category/627bc3be4f55e3d354d72591
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# --------------------------------------------------------------------API FEATURE CATEGORY--------------------------------------------------------------------
+# # GET ALL FEATURE CATEGORY
+# ###
+# GET  http://localhost:5000/api/feature-category/all-feature-category 
+
+# # CREATE FEATURE CATEGORY
+# ###
+# POST  http://localhost:5000/api/feature-category/create-feature-category
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "category": "627bc9c3795deff080054f1b",
+#     "image": {
+#       "public_id": "4323sdfsdf4",
+#       "url": "123gdfg2"
+#     }
+# }
+
+# # UPDATE FEATURE CATEGORY
+# ###
+# PUT  http://localhost:5000/api/feature-category/update-feature-category/627be1b4c6a489e9871bebe9
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "category": "627bc9c3795deff080054f1b",
+#     "image": {
+#       "public_id": "43234",
+#      " url": "1232"
+#     }
+# }
+
+# # DELETE FEATURE CATEGORY
+# ###
+# DELETE  http://localhost:5000/api/feature-category/delete-feature-category/627be1b4c6a489e9871bebe9
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# -------------------------------------------------------------------------API BRAND-------------------------------------------------------------------------
+# # GET ALL BRAND
+# ###
+# GET  http://localhost:5000/api/brand/all-brand
+
+# # CREATE BRAND
+# ###
+# POST  http://localhost:5000/api/brand/create-brand
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "category": ["627e22a97d6b0eeceaea88ea","627e22717d6b0eeceaea88e6","627e22597d6b0eeceaea88e4"],
+#     "name": "danh 1",
+#     "desc": "12345",
+#     "slug": "danh-1"
+# }
+
+# # UPDATE BRAND
+# ###
+# PUT  http://localhost:5000/api/brand/update-brand/627c55f818bcb7114480eb6e
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# {
+#     "category": "627bc9c3795deff080054f1b",
+#     "name": "danh 2",
+#     "desc": "12345",
+#     "slug": "danh-2"
+# }
+
+# # DELETE BRAND
+# ###
+# DELETE  http://localhost:5000/api/brand/delete-brand/627c55f818bcb7114480eb6e
+
+
+# ------------------------------------------------------------------------API FAMOUS BRAND-----------------------------------------------------------------------
+# # GET ALL FAMOUS BRAND
+# ###
+# GET  http://localhost:5000/api/famous-brand/all-famous-brand
+
+# # CREATE FAMOUS BRAND
+# ###
+# POST http://localhost:5000/api/famous-brand/create-famous-brand
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+#  {
+#     "image": {
+#       "public_id": "1345",
+#       "url": "1234"
+#     }
+#  }
+
+# # # UPDATE FAMOUS BRAND
+# # ###
+# # PUT  http://localhost:5000/api/famous-brand/update-famous-brand/627c65389567ebed92c94da4
+# # Content-Type: application/json
+# # token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+# #  {
+# #     "image": {
+# #       "public_id": "1344444",
+# #       "url": "12346666"
+# #     }
+# #  }
+
+# # # DELETE FAMOUS BRAND
+# # ###
+# # DELETE  http://localhost:5000/api/famous-brand/delete-famous-brand/627c65389567ebed92c94da4
+# # token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# ------------------------------------------------------------------------API BANNER-----------------------------------------------------------------------
+# # GET ALL BANNER
+# ###
+# GET  http://localhost:5000/api/banner/all-banner
+
+# # CREATE BANNER
+# ###
+# POST  http://localhost:5000/api/banner/create-banner
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+#  {
+#     "image": {
+#       "public_id": "1345",
+#       "url": "1234"
+#     }
+#  }
+
+# # UPDATE BANNER
+# ###
+# PUT  http://localhost:5000/api/banner/update-banner/627c65389567ebed92c94da4
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+#  {
+#     "image": {
+#       "public_id": "1344444",
+#       "url": "12346666"
+#     }
+#  }
+
+# # DELETE BANNER
+# ###
+# DELETE  http://localhost:5000/api/banner/delete-banner/627c65389567ebed92c94da4
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# --------------------------------------------------------------------------API BLOG--------------------------------------------------------------------------
+# # GET ALL BLOG
+# ###
+# GET  http://localhost:5000/api/blog/all-blog
+
+
+# # GET DETAIL BLOG
+# ###
+# GET  http://localhost:5000/api/blog/detail-blog/6284db00f442b04b2dd91d4c
+# # GET BLOG FOLLOW CATEGORY
+# ###
+# GET  http://localhost:5000/api/blog/filter-cate-blog?catSlug=pod-mot-lan
+
+# # CREATE BLOG
+# ###
+# POST  http://localhost:5000/api/blog/create-blog
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+#   {
+#     "category": "627bc9c3795deff080054f1b",
+#     "content":"23454555"
+#   }
+
+# # UPDATE BLOG
+# ###
+# PUT  http://localhost:5000/api/blog/update-blog/627c67cb7e990b7622b5dec8
+# Content-Type: application/json
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+#   {
+#     "category": "627bc9c3795deff080054f1b",
+#     "content":"23454555wwwww"
+#   }
+
+# # DELETE BLOG
+# ###
+# DELETE  http://localhost:5000/api/blog/delete-blog/627c67cb7e990b7622b5dec8
+# token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JjMGEwMGNhZTU2Njg5MDg5YmMyNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NTIyNzc0MjUsImV4cCI6MTY1MjUzNjYyNX0.myFChiq5ZbOW46fCVi1E8rgwMlM_NuFDSw7CuHlFUvo
+
+
+# ------------------------------------------------------------------------API PRODUCT------------------------------------------------------------------------
+# # GET PRODUCT FOLLOW CATEGORY
+# ###
+# GET  http://localhost:5000/api/product/filter-category-product?page=1&&limit=10&&cat=saltnic&&brand=nasty
+
+# # # CREATE PRODUCT SALE
+# # ###
+# # GET  http://localhost:5000/api/product/sale-product?page=1&&limit=12
+
+# # # GET RELATED PRODUCT
+# # ###
+# # GET http://localhost:5000/api/product/relate-product/:id?limit=4
+
+# # # GET ALL PRODUCT
+# # ###
+# # GET http://localhost:5000/api/product/all-product
+
+# # # GET DETAIL PRODUCT
+# # ###
+# # GET http://localhost:5000/api/product/detail-product/:id
+
+# # # GET SEARCH PRODUCT
+# # ###
+# # GET http://localhost:5000/api/product/search-product?page=1&&limit=12&&searchQuery=ice
+
+# # # CREATE PRODUCT
+# # ###
+# # POST http://localhost:5000/api/product/create-product
+# # Content-Type: application/json
+# # token: Bearer admin
+
+# # {}
+
+# # # UPDATE PRODUCT
+# # ###
+# # PUT http://localhost:5000/api/product/update-product/:id
+# # Content-Type: application/json
+# # token: Bearer admin
+
+# # {}
+
+# # # DELETE PRODUCT
+# # ###
+# # DELETE  http://localhost:5000/api/product/delete-product/:id
+# # token: Bearer admin
+
+
+# GET DETAIL PRODUCT
+###
+GET http://localhost:5000/api/order/detail-order/62c9508039da3e7851176b36
